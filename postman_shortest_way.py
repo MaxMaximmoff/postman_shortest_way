@@ -49,12 +49,12 @@ for i2 in range(len(points)):
                 # условие непосещение одной и той же точки два раза
                 if ((i1!=i2)and(i1!=i3)and(i1!=i4)and(i1!=i5)and(i2!=i3)and(i2!=i4)and(i2!=i5)and(i3!=i4)and(i3!=i5)and(i4 != i5)):
                     # запоминаем текущий путь
-                    path.insert(counter, 'p_{} → p_{} → p_{} → p_{} → p_{}'.format(i1+1, i2+1, i3+1, i4+1, i5+1))
-                    # print(path[counter])
+                    path.insert(counter, 'p_{} → p_{} → p_{} → p_{} → p_{} → p_{}'.format(i1+1, i2+1, i3+1, i4+1, i5+1, i1+1))
+                    print(path[counter])
                     # ищем минимальный путь путь
-                    if ( (distances[i1][i2] + distances[i2][i3] + distances[i3][i4] + distances[i4][i5]) < minPath) :
-                        minPath = distances[i1][i2] + distances[i2][i3] + distances[i3][i4] + distances[i4][i5]
-                        # print(minPath)
+                    if ( (distances[i1][i2] + distances[i2][i3] + distances[i3][i4] + distances[i4][i5] + distances[i5][i1]) < minPath) :
+                        minPath = distances[i1][i2] + distances[i2][i3] + distances[i3][i4] + distances[i4][i5] + distances[i5][i1]
+                        print(minPath)
                         minCounter = counter;
                     counter +=1
                     
